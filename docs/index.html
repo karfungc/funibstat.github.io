@@ -20,9 +20,17 @@
     
         table {
           border-collapse: collapse;
+          margin: 0 auto; /* Center alignment */
+          font-family: Arial, sans-serif;
           width: 100%;
         }
-    
+
+table.centered {
+  width: 400px; /* Fixed width */
+  margin: 0 auto; /* Center alignment */
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}    
         th, td {
           border: 1px solid black;
           padding: 8px;
@@ -41,7 +49,13 @@
         .highlight-color {
           background-color: #87CEEB;
         }
+
+        .points-table {
+          background-color: #E0FFFF;
+        }
         </style>
+    
+    
     
         <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
     
@@ -71,19 +85,20 @@
         <h1>Points Table</h1>
     </div>
     
-        <table class="sortable">
     
     
     
-    <thead>
+    <table class="sortable">
+<thead>
 <tr>
 <th>Player Name</th>
-<th>Points</th>
-<th>Bonus Points</th>
 <th>Matches</th>
+<th>Innings</th>
 <th>Wins</th>
 <th>Losses</th>
 <th>Draws</th>
+<th>Points</th>
+<th>Bonus Points</th>
 <th>Runs</th>
 <th>Wickets</th>
 <th>Overs</th>
@@ -99,109 +114,278 @@
 </thead>
 <tbody>
 <tr class="light-orange">
-<td class="highlight-color">rot9999</td>
+<td class="highlight-color"><b>Karthik<b></td>
+<td>9</td>
+<td>18</td>
+<td>8</td>
+<td>1</td>
+<td>0</td>
+<td class="points-table">32</td>
+<td>0</td>
+<td>4999</td>
+<td>148</td>
+<td>759.5</td>
+<td>33.78</td>
+<td>4902</td>
+<td>517.3</td>
+<td>180</td>
+<td class="points-table">6.54</td>
+<td>6.58</td>
+<td>109.65</td>
+<td>42.19</td>
+</tr>
+<tr class="light-orange">
+<td class="highlight-color"><b>Srinathbingi <b></td>
+<td>8</td>
+<td>11</td>
+<td>7</td>
+<td>1</td>
+<td>0</td>
+<td class="points-table">31</td>
+<td>3</td>
+<td>4849</td>
+<td>107</td>
+<td>481.5</td>
+<td>45.32</td>
+<td>4233</td>
+<td>524.3</td>
+<td>140</td>
+<td class="points-table">15.08</td>
+<td>10.07</td>
+<td>167.73</td>
+<td>43.77</td>
+</tr>
+<tr class="light-orange">
+<td class="highlight-color"><b>mpower99<b></td>
+<td>8</td>
+<td>13</td>
+<td>6</td>
+<td>2</td>
+<td>0</td>
+<td class="points-table">25</td>
+<td>1</td>
+<td>5405</td>
+<td>122</td>
+<td>533.4</td>
+<td>44.3</td>
+<td>4386</td>
+<td>527.2</td>
+<td>127</td>
+<td class="points-table">9.77</td>
+<td>10.13</td>
+<td>168.8</td>
+<td>41.03</td>
+</tr>
+<tr class="light-orange">
+<td class="highlight-color"><b>Iceman<b></td>
+<td>8</td>
+<td>15</td>
 <td>5</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
+<td>3</td>
 <td>0</td>
+<td class="points-table">21</td>
+<td>1</td>
+<td>4269</td>
+<td>150</td>
+<td>456.3</td>
+<td>28.46</td>
+<td>3845</td>
+<td>440.2</td>
+<td>150</td>
+<td class="points-table">2.83</td>
+<td>9.36</td>
+<td>155.86</td>
+<td>30.42</td>
+</tr>
+<tr class="">
+<td class="highlight-color"><b>demonix5822<b></td>
+<td>8</td>
+<td>15</td>
+<td>4</td>
+<td>4</td>
 <td>0</td>
-<td>429</td>
+<td class="points-table">17</td>
+<td>1</td>
+<td>4193</td>
+<td>139</td>
+<td>306.5</td>
+<td>30.17</td>
+<td>3864</td>
+<td>481.2</td>
+<td>154</td>
+<td class="points-table">5.07</td>
+<td>13.68</td>
+<td>227.76</td>
+<td>20.43</td>
+</tr>
+<tr class="">
+<td class="highlight-color"><b>rot9999<b></td>
+<td>5</td>
+<td>9</td>
+<td>3</td>
+<td>2</td>
+<td>0</td>
+<td class="points-table">13</td>
+<td>1</td>
+<td>3270</td>
+<td>90</td>
+<td>530.0</td>
+<td>36.33</td>
+<td>3051</td>
+<td>305.1</td>
+<td>100</td>
+<td class="points-table">5.82</td>
+<td>6.17</td>
+<td>102.83</td>
+<td>58.89</td>
+</tr>
+<tr class="">
+<td class="highlight-color"><b>nik<b></td>
+<td>6</td>
 <td>10</td>
-<td>75.5</td>
-<td>42.9</td>
-<td>256</td>
-<td>27.3</td>
-<td>20</td>
-<td>30.1</td>
-<td>5.68</td>
-<td>94.29</td>
-<td>75.5</td>
-</tr>
-<tr class="light-orange">
-<td class="highlight-color">Srinathbingi </td>
+<td>2</td>
 <td>4</td>
 <td>0</td>
-<td>1</td>
-<td>1</td>
+<td class="points-table">8</td>
 <td>0</td>
-<td>0</td>
-<td>989</td>
-<td>20</td>
-<td>99.0</td>
-<td>49.45</td>
-<td>718</td>
-<td>107.2</td>
-<td>20</td>
-<td>13.55</td>
-<td>9.99</td>
-<td>166.5</td>
-<td>49.5</td>
+<td>1515</td>
+<td>92</td>
+<td>169.0</td>
+<td>16.47</td>
+<td>2047</td>
+<td>216.3</td>
+<td>83</td>
+<td class="points-table">-8.2</td>
+<td>8.96</td>
+<td>149.41</td>
+<td>16.9</td>
 </tr>
-<tr class="light-orange">
-<td class="highlight-color">Karthik</td>
-<td>4</td>
-<td>0</td>
+<tr class="">
+<td class="highlight-color"><b>Don<b></td>
+<td>2</td>
 <td>2</td>
 <td>1</td>
 <td>1</td>
 <td>0</td>
-<td>1150</td>
-<td>40</td>
-<td>178.4</td>
-<td>28.75</td>
-<td>1248</td>
-<td>129.1</td>
-<td>40</td>
-<td>-2.45</td>
-<td>6.45</td>
-<td>107.28</td>
-<td>44.6</td>
-</tr>
-<tr class="light-orange">
-<td class="highlight-color">Player1</td>
+<td class="points-table">4</td>
 <td>0</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>259</td>
+<td>502</td>
 <td>20</td>
-<td>30.1</td>
-<td>12.95</td>
-<td>432</td>
-<td>71.2</td>
-<td>20</td>
-<td>-8.65</td>
-<td>8.6</td>
-<td>143.09</td>
-<td>15.05</td>
+<td>78.2</td>
+<td>25.1</td>
+<td>506</td>
+<td>86.3</td>
+<td>16</td>
+<td class="points-table">-6.52</td>
+<td>6.42</td>
+<td>106.81</td>
+<td>39.1</td>
 </tr>
 <tr class="">
-<td class="highlight-color">Player2</td>
-<td>0</td>
-<td>0</td>
+<td class="highlight-color"><b>shaildesai<b></td>
+<td>7</td>
+<td>12</td>
 <td>1</td>
+<td>6</td>
 <td>0</td>
+<td class="points-table">4</td>
+<td>0</td>
+<td>2309</td>
+<td>120</td>
+<td>254.0</td>
+<td>19.24</td>
+<td>3048</td>
+<td>327.2</td>
+<td>88</td>
+<td class="points-table">-15.39</td>
+<td>9.09</td>
+<td>151.51</td>
+<td>21.17</td>
+</tr>
+<tr class="">
+<td class="highlight-color"><b>Srinu553<b></td>
+<td>5</td>
+<td>8</td>
 <td>1</td>
+<td>4</td>
 <td>0</td>
-<td>256</td>
-<td>20</td>
-<td>27.3</td>
-<td>12.8</td>
-<td>429</td>
-<td>75.5</td>
+<td class="points-table">4</td>
+<td>0</td>
+<td>1349</td>
+<td>80</td>
+<td>165.2</td>
+<td>16.86</td>
+<td>2256</td>
+<td>242.3</td>
+<td>60</td>
+<td class="points-table">-20.74</td>
+<td>8.17</td>
+<td>135.99</td>
+<td>20.65</td>
+</tr>
+<tr class="">
+<td class="highlight-color"><b>Player2<b></td>
 <td>10</td>
-<td>-30.1</td>
-<td>9.38</td>
-<td>155.15</td>
-<td>13.65</td>
+<td>8</td>
+<td>0</td>
+<td>10</td>
+<td>0</td>
+<td class="points-table">0</td>
+<td>0</td>
+<td>1067</td>
+<td>80</td>
+<td>141.1</td>
+<td>13.34</td>
+<td>1589</td>
+<td>207.3</td>
+<td>50</td>
+<td class="points-table">-18.44</td>
+<td>7.56</td>
+<td>125.97</td>
+<td>17.64</td>
 </tr>
 </tbody>
 </table>
 </body>
 </html>
+    
+    <br>
+    <br>
+    
+    
+        <table class="centered">
+          <tr>
+            <th>Column Name</th>
+            <th>Value</th>
+          </tr>
+        <tr><td>Matches</td><td>38</td></tr>
+<tr><td>Innings</td><td>121</td></tr>
+<tr><td>Draws</td><td>0</td></tr>
+<tr><td>Runs</td><td>33727</td></tr>
+<tr><td>Wickets</td><td>1148</td></tr>
+<tr><td>Overs</td><td>3874</td></tr>
+<tr><td>Balls</td><td>23259.0</td></tr>
+<tr><td>Average</td><td>29.38</td></tr>
+<tr><td>Run Rate</td><td>8.7</td></tr>
+<tr><td>Strike Rate</td><td>145.01</td></tr>
+<tr><td>Average Runs Per Match</td><td>887.55</td></tr>
+<tr><td>Average Runs Per Innings</td><td>278.74</td></tr>
+<tr><td>Average Overs Per Match</td><td>50.98</td></tr>
+<tr><td>Average Overs Per Wicket</td><td>3.38</td></tr>
+<tr><td>Average Overs Per Innings</td><td>32.02</td></tr>
+<tr><td>Average Balls Per Match</td><td>306.04</td></tr>
+<tr><td>Average Balls Per Innings</td><td>192.22</td></tr>
+<tr><td>Average Balls Per Wicket</td><td>20.26</td></tr>
+<tr><td>0</td><td>10491</td></tr>
+<tr><td>1</td><td>5067</td></tr>
+<tr><td>2</td><td>2632</td></tr>
+<tr><td>3</td><td>2136</td></tr>
+<tr><td>4</td><td>21192</td></tr>
+<tr><td>6</td><td>2694</td></tr>
+<tr><td>Boundaries</td><td>87468.0</td></tr>
+
+        </table>
+        
     
     
     
