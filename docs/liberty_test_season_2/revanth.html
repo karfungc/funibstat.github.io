@@ -10,6 +10,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+
         <style>
         .side-by-side-images img {
             display: inline-block;
@@ -54,6 +56,170 @@
         .points-table {
           background-color: #E0FFFF;
         }
+        body {
+          padding: 0;
+          margin: 0;
+          border: 0;
+          font-family: "Museo Sans", sans-serif;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+        ul.accordion-list {
+          position: relative;
+          display: block;
+          width: 100%;
+          height: auto;
+          padding: 20px;
+          margin: 0;
+          list-style: none;
+          background-color: #f9f9fa;
+        }
+        ul.accordion-list li {
+          position: relative;
+          display: block;
+          width: 100%;
+          height: auto;
+          background-color: #fff;
+          padding: 20px;
+          margin: 0 auto 15px auto;
+          border: 1px solid #eee;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+        ul.accordion-list .main-accordion--list.active:after {
+          transform: rotate(180deg);
+        }
+        ul.accordion-list li h2 {
+          font-weight: 600;
+          position: relative;
+          display: block;
+          width: 100%;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0;
+          font-size: 24px;
+          letter-spacing: 0.01em;
+          cursor: pointer;
+          font-family: Arial, sans-serif;
+        }
+        ul.accordion-list .main-accordion--list:after {
+          content: "2fc";
+          font-family: "material-design-iconic-font";
+          position: absolute;
+          right: 20px;
+          top: 20px;
+          color: #000;
+          transition: all 0.3s ease-in-out;
+          font-size: 34px;
+        }
+        ul.accordion-list li div.answer {
+          position: relative;
+          display: block;
+          width: 100%;
+          height: auto;
+          margin: 0;
+          padding: 0;
+          cursor: pointer;
+        }
+        ul.accordion-list li div.answer p {
+          position: relative;
+          display: block;
+          font-weight: 300;
+          padding: 10px 0 0 0;
+          cursor: pointer;
+          line-height: 150%;
+          margin: 0 0 15px 0;
+          font-size: 14px;
+        }
+        .main-header-block h1 {
+          text-align: center;
+        }
+        .accordion-inner-block {
+          margin-top: 20px;
+        }
+        .accortion-list--inner, .accortion-list-odi--inner {
+          display: flex;
+          align-items: center;
+          padding-left: 10px;
+          margin-bottom: 4px;
+          box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        }
+        .accordion-inner-block .accortion-list--inner li,
+        .accordion-inner-odi-block .accortion-list-odi--inner li {
+          border: none;
+          margin-bottom: 0;
+          font-size: 18px;
+        }
+        .accordion-inner-block .accortion-list--inner li strong {
+          font-weight: 600;
+        }
+        .accordion-inner-block .accortion-list--inner li strong svg,
+        .odi-player-status--inner li strong svg {
+          vertical-align: bottom;
+          width: 25px;
+          height: auto;
+          padding-right: 5px;
+        }
+        .accordion-inner-block .accortion-list--inner li:first-child,
+        .accordion-inner-odi-block .accortion-list-odi--inner li:first-child {
+          min-width: 28%;
+          width: auto;
+          padding-left: 0;
+        }
+        .accordion-inner-block .accortion-list--inner li:nth-child(2) span,
+        .accordion-inner-odi-block .accortion-list-odi--inner li:nth-child(2) .green-status {
+          background: #e5f6ee;
+          padding: 8px;
+          border-radius: 6px;
+          color: #05ad61;
+        }
+        .accordion-inner-block .accortion-list--inner li:nth-child(3) span,
+        .odi-player-status--inner li:nth-child(2) span {
+          background: #fff8e5;
+          padding: 8px;
+          border-radius: 6px;
+          color: #fbb000;
+        }
+        .accordion-inner-block .accortion-list--inner li:last-child span,
+        .odi-player-status--inner li:nth-child(3) span {
+          background: #f7f7f7;
+          padding: 8px;
+          border-radius: 6px;
+          color: #999999;
+        }
+        .accordion-inner-block .accortion-list--inner.data-two li:nth-child(2) span,
+        .odi-player-status--inner li:nth-child(4) span,
+        .accortion-list-odi--inner li:nth-child(2) .red-status {
+          background: #fef4f3;
+          padding: 8px;
+          border-radius: 6px;
+          color: #e1453d;
+        }
+        .odi-player-status ul {
+          padding-left: 0;
+        }
+        .odi-player-status ul h4 {
+          margin: 0;
+          padding: 10px 0px;
+          font-size: 20px;
+        }  
+        .odi-player-status ul li {
+          padding: 20px 0px;
+        }
+        .accordion--header {
+          display: flex;
+          align-items: center;
+          padding-right: 40px;
+        }
+        .accordion--header .number-of-record {
+          background: #dbdbff;
+          padding: 6px 12px;
+          color: #0000ee;
+          font-size: 20px;
+          font-weight: 600;
+          border-radius: 4px;
+        }
+
         </style>
     
     
@@ -64,6 +230,7 @@
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GEKHN27QRB"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -71,7 +238,24 @@
     
       gtag('config', 'G-GEKHN27QRB');
     </script>
-    
+    <script>
+      $(document).ready(function(){
+        $('.accordion-list > li > .answer').hide();
+          
+        $('.accordion-list > li').click(function() {
+          if ($(this).hasClass("active")) {
+            $(this).removeClass("active").find(".answer").slideUp();
+          } else {
+            $(".accordion-list > li.active .answer").slideUp();
+            $(".accordion-list > li.active").removeClass("active");
+            $(this).addClass("active").find(".answer").slideDown();
+          }
+          return false;
+        });
+
+      });
+    </script>
+
     <body>
     
 
@@ -110,6 +294,8 @@
 <th>nix71289_2</th>
 <th>lelouch_1</th>
 <th>lelouch_2</th>
+<th>cherry1114604_1</th>
+<th>cherry1114604_2</th>
 <th>Total_Runs</th>
 <th>Total_Overs</th>
 <th>Run_Rate</th>
@@ -130,8 +316,10 @@
 <td>25(4.1)</td>
 <td>0(0.1)</td>
 <td>31(4.0)</td>
-<td>127.0</td>
-<td>19.5</td>
+<td>0(0.1)</td>
+<td>17(2.3)</td>
+<td>144.0</td>
+<td>22.3</td>
 <td>6.5</td>
 </tr>
 <tr>
@@ -148,8 +336,10 @@
 <td>16(1.1)</td>
 <td>26(2.0)</td>
 <td>9(2.5)</td>
-<td>165.0</td>
-<td>16.4</td>
+<td>0(0.1)</td>
+<td>16(1.1)</td>
+<td>181.0</td>
+<td>18.0</td>
 <td>10.1</td>
 </tr>
 <tr>
@@ -166,9 +356,11 @@
 <td>0(0.3)</td>
 <td>33(4.4)</td>
 <td>22(1.1)</td>
-<td>129.0</td>
-<td>16.3</td>
-<td>7.9</td>
+<td>0(0.2)</td>
+<td>4(0.4)</td>
+<td>133.0</td>
+<td>17.3</td>
+<td>7.7</td>
 </tr>
 <tr>
 <th>4</th>
@@ -184,9 +376,11 @@
 <td>12(1.1)</td>
 <td>4(1.1)</td>
 <td>5(0.3)</td>
-<td>135.0</td>
-<td>17.5</td>
-<td>7.7</td>
+<td>0(0.2)</td>
+<td>4(0.2)</td>
+<td>139.0</td>
+<td>18.3</td>
+<td>7.6</td>
 </tr>
 <tr>
 <th>5</th>
@@ -202,9 +396,11 @@
 <td>12(2.4)</td>
 <td>17(1.1)</td>
 <td>6(2.0)</td>
-<td>159.0</td>
-<td>18.1</td>
-<td>8.8</td>
+<td>29(4.3)</td>
+<td>0(0.1)</td>
+<td>188.0</td>
+<td>22.5</td>
+<td>8.4</td>
 </tr>
 <tr>
 <th>6</th>
@@ -220,9 +416,11 @@
 <td>59(4.3)</td>
 <td>36(3.5)</td>
 <td>8(1.1)</td>
+<td>0(0.1)</td>
+<td>0(0.1)</td>
 <td>329.0</td>
-<td>35.4</td>
-<td>9.3</td>
+<td>36.0</td>
+<td>9.1</td>
 </tr>
 <tr>
 <th>7</th>
@@ -238,9 +436,11 @@
 <td>0(0.3)</td>
 <td>115(9.2)</td>
 <td>22(3.1)</td>
-<td>322.0</td>
-<td>31.5</td>
-<td>10.2</td>
+<td>5(0.4)</td>
+<td>6(0.4)</td>
+<td>333.0</td>
+<td>33.1</td>
+<td>10.1</td>
 </tr>
 <tr>
 <th>8</th>
@@ -256,9 +456,11 @@
 <td>0(0.1)</td>
 <td>4(1.4)</td>
 <td>22(2.0)</td>
-<td>217.0</td>
-<td>27.3</td>
-<td>7.9</td>
+<td>7(0.3)</td>
+<td>69(8.1)</td>
+<td>293.0</td>
+<td>36.1</td>
+<td>8.1</td>
 </tr>
 <tr>
 <th>9</th>
@@ -274,9 +476,11 @@
 <td>6(1.0)</td>
 <td>61(3.3)</td>
 <td>0(0.2)</td>
-<td>266.0</td>
-<td>30.0</td>
-<td>8.9</td>
+<td>39(6.3)</td>
+<td>41(3.4)</td>
+<td>346.0</td>
+<td>40.1</td>
+<td>8.6</td>
 </tr>
 <tr>
 <th>10</th>
@@ -292,9 +496,11 @@
 <td>6(0.4)</td>
 <td>0(0.1)</td>
 <td>0(0.1)</td>
-<td>144.0</td>
-<td>17.5</td>
-<td>8.2</td>
+<td>0(0.3)</td>
+<td>34(3.5)</td>
+<td>178.0</td>
+<td>22.1</td>
+<td>8.1</td>
 </tr>
 <tr>
 <th>Total</th>
@@ -310,9 +516,11 @@
 <td>142</td>
 <td>296</td>
 <td>140</td>
-<td>2029.0</td>
-<td>229.5</td>
-<td>8.8</td>
+<td>87</td>
+<td>192</td>
+<td>2308.0</td>
+<td>265.8</td>
+<td>8.7</td>
 </tr>
 </tbody>
 </table>
@@ -337,6 +545,8 @@
 <th>nix71289_2</th>
 <th>lelouch_1</th>
 <th>lelouch_2</th>
+<th>cherry1114604_1</th>
+<th>cherry1114604_2</th>
 </tr>
 </thead>
 <tbody>
@@ -354,6 +564,8 @@
 <td>25(4.1)</td>
 <td>0(0.1)</td>
 <td>31(4.0)</td>
+<td>0(0.1)</td>
+<td>17(2.3)</td>
 </tr>
 <tr>
 <th>2</th>
@@ -369,6 +581,8 @@
 <td>41(5.2)</td>
 <td>26(2.1)</td>
 <td>40(6.5)</td>
+<td>0(0.2)</td>
+<td>33(3.4)</td>
 </tr>
 <tr>
 <th>3</th>
@@ -384,6 +598,8 @@
 <td>41(5.5)</td>
 <td>59(6.5)</td>
 <td>62(8.0)</td>
+<td>0(0.4)</td>
+<td>37(4.2)</td>
 </tr>
 <tr>
 <th>4</th>
@@ -399,6 +615,8 @@
 <td>53(7.0)</td>
 <td>63(8.0)</td>
 <td>67(8.3)</td>
+<td>0(1.0)</td>
+<td>41(4.4)</td>
 </tr>
 <tr>
 <th>5</th>
@@ -414,6 +632,8 @@
 <td>65(9.4)</td>
 <td>80(9.1)</td>
 <td>73(10.3)</td>
+<td>29(5.3)</td>
+<td>41(4.5)</td>
 </tr>
 <tr>
 <th>6</th>
@@ -429,6 +649,8 @@
 <td>124(14.1)</td>
 <td>116(13.0)</td>
 <td>81(11.4)</td>
+<td>29(5.4)</td>
+<td>41(5.0)</td>
 </tr>
 <tr>
 <th>7</th>
@@ -444,6 +666,8 @@
 <td>124(14.4)</td>
 <td>231(22.2)</td>
 <td>103(14.5)</td>
+<td>34(6.2)</td>
+<td>47(5.4)</td>
 </tr>
 <tr>
 <th>8</th>
@@ -459,6 +683,8 @@
 <td>124(14.5)</td>
 <td>235(24.0)</td>
 <td>125(16.5)</td>
+<td>41(6.5)</td>
+<td>116(13.5)</td>
 </tr>
 <tr>
 <th>9</th>
@@ -474,6 +700,8 @@
 <td>130(15.5)</td>
 <td>296(27.3)</td>
 <td>125(17.1)</td>
+<td>80(13.2)</td>
+<td>157(17.3)</td>
 </tr>
 <tr>
 <th>10</th>
@@ -489,6 +717,8 @@
 <td>136(16.3)</td>
 <td>296(27.4)</td>
 <td>125(17.2)</td>
+<td>80(13.5)</td>
+<td>191(21.2)</td>
 </tr>
 </tbody>
 </table>
