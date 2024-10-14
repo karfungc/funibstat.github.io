@@ -1,0 +1,901 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=0.5">
+        <title> srinathbingi Stats
+        </title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+
+        <style>
+        .side-by-side-images img {
+            display: inline-block;
+            width: 50%; /* Slightly less than 50% to accommodate margins/padding */
+            vertical-align: top; /* Align images at the top */
+            margin-right: 2%; /* Space between images, adjust as needed */
+        }
+    
+        table {
+          border-collapse: collapse;
+          margin: 0 auto; /* Center alignment */
+          font-family: Arial, sans-serif;
+          width: 100%;
+        }
+
+        table.centered {
+          width: 400px; /* Fixed width */
+          margin: 0 auto; /* Center alignment */
+          border-collapse: collapse;
+          font-family: Arial, sans-serif;
+        }    
+
+        th, td {
+          border: 1px solid black;
+          padding: 8px;
+          text-align: center;
+        }
+    
+        th {
+          background-color: #FFA500;
+          color: black;
+        }
+    
+        .light-orange {
+          background-color: #FFFF99;
+        }
+    
+        .highlight-color {
+          background-color: #87CEEB;
+        }
+
+        .points-table {
+          background-color: #E0FFFF;
+        }
+        body {
+          padding: 0;
+          margin: 0;
+          border: 0;
+          font-family: "Museo Sans", sans-serif;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+        ul.accordion-list {
+          position: relative;
+          display: block;
+          width: 100%;
+          height: auto;
+          padding: 20px;
+          margin: 0;
+          list-style: none;
+          background-color: #f9f9fa;
+        }
+        ul.accordion-list li {
+          position: relative;
+          display: block;
+          width: 100%;
+          height: auto;
+          background-color: #fff;
+          padding: 20px;
+          margin: 0 auto 15px auto;
+          border: 1px solid #eee;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+        ul.accordion-list .main-accordion--list.active:after {
+          transform: rotate(180deg);
+        }
+        ul.accordion-list li h2 {
+          font-weight: 600;
+          position: relative;
+          display: block;
+          width: 100%;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0;
+          font-size: 24px;
+          letter-spacing: 0.01em;
+          cursor: pointer;
+          font-family: Arial, sans-serif;
+        }
+        ul.accordion-list .main-accordion--list:after {
+          content: "2fc";
+          font-family: "material-design-iconic-font";
+          position: absolute;
+          right: 20px;
+          top: 20px;
+          color: #000;
+          transition: all 0.3s ease-in-out;
+          font-size: 34px;
+        }
+        ul.accordion-list li div.answer {
+          position: relative;
+          display: block;
+          width: 100%;
+          height: auto;
+          margin: 0;
+          padding: 0;
+          cursor: pointer;
+        }
+        ul.accordion-list li div.answer p {
+          position: relative;
+          display: block;
+          font-weight: 300;
+          padding: 10px 0 0 0;
+          cursor: pointer;
+          line-height: 150%;
+          margin: 0 0 15px 0;
+          font-size: 14px;
+        }
+        .main-header-block h1 {
+          text-align: center;
+        }
+        .accordion-inner-block {
+          margin-top: 20px;
+        }
+        .accortion-list--inner, .accortion-list-odi--inner {
+          display: flex;
+          align-items: center;
+          padding-left: 10px;
+          margin-bottom: 4px;
+          box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        }
+        .accordion-inner-block .accortion-list--inner li,
+        .accordion-inner-odi-block .accortion-list-odi--inner li {
+          border: none;
+          margin-bottom: 0;
+          font-size: 18px;
+        }
+        .accordion-inner-block .accortion-list--inner li strong {
+          font-weight: 600;
+        }
+        .accordion-inner-block .accortion-list--inner li strong svg,
+        .odi-player-status--inner li strong svg {
+          vertical-align: bottom;
+          width: 25px;
+          height: auto;
+          padding-right: 5px;
+        }
+        .accordion-inner-block .accortion-list--inner li:first-child,
+        .accordion-inner-odi-block .accortion-list-odi--inner li:first-child {
+          min-width: 28%;
+          width: auto;
+          padding-left: 0;
+        }
+        .accordion-inner-block .accortion-list--inner li:nth-child(2) span,
+        .accordion-inner-odi-block .accortion-list-odi--inner li:nth-child(2) .green-status {
+          background: #e5f6ee;
+          padding: 8px;
+          border-radius: 6px;
+          color: #05ad61;
+        }
+        .accordion-inner-block .accortion-list--inner li:nth-child(3) span,
+        .odi-player-status--inner li:nth-child(2) span {
+          background: #fff8e5;
+          padding: 8px;
+          border-radius: 6px;
+          color: #fbb000;
+        }
+        .accordion-inner-block .accortion-list--inner li:last-child span,
+        .odi-player-status--inner li:nth-child(3) span {
+          background: #f7f7f7;
+          padding: 8px;
+          border-radius: 6px;
+          color: #999999;
+        }
+        .accordion-inner-block .accortion-list--inner.data-two li:nth-child(2) span,
+        .odi-player-status--inner li:nth-child(4) span,
+        .accortion-list-odi--inner li:nth-child(2) .red-status {
+          background: #fef4f3;
+          padding: 8px;
+          border-radius: 6px;
+          color: #e1453d;
+        }
+        .odi-player-status ul {
+          padding-left: 0;
+        }
+        .odi-player-status ul h4 {
+          margin: 0;
+          padding: 10px 0px;
+          font-size: 20px;
+        }  
+        .odi-player-status ul li {
+          padding: 20px 0px;
+        }
+        .accordion--header {
+          display: flex;
+          align-items: center;
+          padding-right: 40px;
+        }
+        .accordion--header .number-of-record {
+          background: #dbdbff;
+          padding: 6px 12px;
+          color: #0000ee;
+          font-size: 20px;
+          font-weight: 600;
+          border-radius: 4px;
+        }
+
+        </style>
+    
+    
+    
+        <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+    
+    </head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GEKHN27QRB"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-GEKHN27QRB');
+    </script>
+    <script>
+      $(document).ready(function(){
+        $('.accordion-list > li > .answer').hide();
+          
+        $('.accordion-list > li').click(function() {
+          if ($(this).hasClass("active")) {
+            $(this).removeClass("active").find(".answer").slideUp();
+          } else {
+            $(".accordion-list > li.active .answer").slideUp();
+            $(".accordion-list > li.active").removeClass("active");
+            $(this).addClass("active").find(".answer").slideDown();
+          }
+          return false;
+        });
+
+      });
+    </script>
+
+    <body>
+    
+
+     <img src="./../images/header_web_page_1.png" alt="" class="profile-pic" style="width:100%;height:25%;">
+    
+    <bt><br>    
+    <br>
+    
+    
+    
+
+        <div style="text-align:center;">
+            <h3><a href="./liberty_test_season_6.html">Back to liberty_test_season_6</a></h3>
+        </div>
+
+                <div style="text-align:center;">
+                <h1>Srinathbingi</h1>
+                </div>
+            
+            <div style="text-align:center;">
+                <h1>Partnership Stats</h1>
+            </div>
+            <table>
+<thead>
+<tr>
+<th>#</th>
+<th>don_1</th>
+<th>nix71289_1</th>
+<th>nix71289_2</th>
+<th>aj_1</th>
+<th>lelouch_1</th>
+<th>revanth_1</th>
+<th>cherry1114604_1</th>
+<th>cherry1114604_2</th>
+<th>vikramobu_1</th>
+<th>vikramobu_2</th>
+<th>aman_1</th>
+<th>siddhu03_1</th>
+<th>siddhu03_2</th>
+<th>hiren_1</th>
+<th>hiren_2</th>
+<th>donzzz_1</th>
+<th>donzzz_2</th>
+<th>karthik_1</th>
+<th>iceman_1</th>
+<th>iceman_2</th>
+<th>aj_2</th>
+<th>Total_Runs</th>
+<th>Total_Overs</th>
+<th>Run_Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>1</th>
+<td>38(3.5)</td>
+<td>263(25.2)</td>
+<td>24(2.0)</td>
+<td>65(5.0)</td>
+<td>76(5.4)</td>
+<td>13(2.2)</td>
+<td>31(2.0)</td>
+<td>27(2.1)</td>
+<td>65(5.5)</td>
+<td>83(5.3)</td>
+<td>75(6.0)</td>
+<td>14(1.1)</td>
+<td>18(1.3)</td>
+<td>28(2.0999999046325684)</td>
+<td>61(4.0)</td>
+<td>123(10.4)</td>
+<td>56(4.0)</td>
+<td>116(9.5)</td>
+<td>78(5.1)</td>
+<td>51(4.0)</td>
+<td>36(4.1)</td>
+<td>1411.0</td>
+<td>117.4</td>
+<td>12.0</td>
+</tr>
+<tr>
+<th>2</th>
+<td>274(24.5)</td>
+<td>129(11.4)</td>
+<td>0(0)</td>
+<td>63(4.0)</td>
+<td>260(23.2)</td>
+<td>0(0.1)</td>
+<td>15(2.1)</td>
+<td>6(1.0)</td>
+<td>144(11.2)</td>
+<td>9(1.1)</td>
+<td>10(1.1)</td>
+<td>21(2.3)</td>
+<td>4(0.3)</td>
+<td>18(1.5)</td>
+<td>0(0)</td>
+<td>56(6.2)</td>
+<td>162(10.5)</td>
+<td>91(9.3)</td>
+<td>38(3.3)</td>
+<td>38(4.2)</td>
+<td>137(12.3)</td>
+<td>1704.0</td>
+<td>150.1</td>
+<td>11.4</td>
+</tr>
+<tr>
+<th>3</th>
+<td>237(19.5)</td>
+<td>35(2.0)</td>
+<td>0(0)</td>
+<td>55(3.4)</td>
+<td>32(2.4)</td>
+<td>6(0.4)</td>
+<td>10(1.1)</td>
+<td>66(7.2)</td>
+<td>76(5.1)</td>
+<td>0(0)</td>
+<td>1(0.2)</td>
+<td>0(0.1)</td>
+<td>19(2.2)</td>
+<td>106(8.0)</td>
+<td>0(0)</td>
+<td>5(1.0)</td>
+<td>0(0)</td>
+<td>52(5.2)</td>
+<td>118(9.2)</td>
+<td>8(0.4)</td>
+<td>148(13.5)</td>
+<td>1043.0</td>
+<td>89.0</td>
+<td>11.7</td>
+</tr>
+<tr>
+<th>4</th>
+<td>239(22.4)</td>
+<td>14(1.3)</td>
+<td>0(0)</td>
+<td>62(4.3)</td>
+<td>86(7.1)</td>
+<td>90(9.1)</td>
+<td>19(1.4)</td>
+<td>0(0.1)</td>
+<td>9(0.4)</td>
+<td>0(0)</td>
+<td>76(6.2)</td>
+<td>216(17.1)</td>
+<td>34(3.1)</td>
+<td>49(5.2)</td>
+<td>0(0)</td>
+<td>53(5.2)</td>
+<td>0(0)</td>
+<td>113(11.4)</td>
+<td>40(4.1)</td>
+<td>21(2.0)</td>
+<td>85(6.3)</td>
+<td>1309.0</td>
+<td>121.3</td>
+<td>10.8</td>
+</tr>
+<tr>
+<th>5</th>
+<td>176(13.0)</td>
+<td>26(3.5)</td>
+<td>0(0)</td>
+<td>2(0.4)</td>
+<td>6(1.2)</td>
+<td>119(10.1)</td>
+<td>51(4.3)</td>
+<td>46(4.5)</td>
+<td>68(4.2)</td>
+<td>0(0)</td>
+<td>31(3.4)</td>
+<td>68(5.2)</td>
+<td>0(0)</td>
+<td>37(4.1)</td>
+<td>0(0)</td>
+<td>12(1.1)</td>
+<td>0(0)</td>
+<td>57(4.4)</td>
+<td>0(0.1)</td>
+<td>20(2.5)</td>
+<td>91(7.0)</td>
+<td>948.0</td>
+<td>85.5</td>
+<td>11.1</td>
+</tr>
+<tr>
+<th>6</th>
+<td>20(1.2)</td>
+<td>55(4.3)</td>
+<td>0(0)</td>
+<td>84(6.0)</td>
+<td>31(2.1)</td>
+<td>0(0.1)</td>
+<td>26(2.3)</td>
+<td>296(29.4)</td>
+<td>14(1.3)</td>
+<td>0(0)</td>
+<td>112(9.5)</td>
+<td>30(2.5)</td>
+<td>0(0)</td>
+<td>55(5.0)</td>
+<td>0(0)</td>
+<td>74(5.2)</td>
+<td>0(0)</td>
+<td>146(13.3)</td>
+<td>54(6.1)</td>
+<td>58(6.3)</td>
+<td>21(2.3)</td>
+<td>1360.0</td>
+<td>124.3</td>
+<td>10.9</td>
+</tr>
+<tr>
+<th>7</th>
+<td>48(3.3)</td>
+<td>3(0.3)</td>
+<td>0(0)</td>
+<td>75(5.5)</td>
+<td>69(5.3)</td>
+<td>79(5.5)</td>
+<td>18(1.4)</td>
+<td>165(10.2)</td>
+<td>46(2.5)</td>
+<td>0(0)</td>
+<td>62(8.0)</td>
+<td>105(8.5)</td>
+<td>0(0)</td>
+<td>1(0.3)</td>
+<td>0(0)</td>
+<td>0(0.1)</td>
+<td>0(0)</td>
+<td>37(2.5)</td>
+<td>55(6.2)</td>
+<td>75(14.2)</td>
+<td>114(9.0)</td>
+<td>1089.0</td>
+<td>98.1</td>
+<td>11.1</td>
+</tr>
+<tr>
+<th>8</th>
+<td>27(2.0)</td>
+<td>85(5.5)</td>
+<td>0(0)</td>
+<td>79(5.5)</td>
+<td>143(10.4)</td>
+<td>14(1.5)</td>
+<td>40(3.3)</td>
+<td>46(4.0)</td>
+<td>9(1.3)</td>
+<td>0(0)</td>
+<td>5(0.3)</td>
+<td>31(3.1)</td>
+<td>0(0)</td>
+<td>43(4.0)</td>
+<td>0(0)</td>
+<td>28(2.4)</td>
+<td>0(0)</td>
+<td>213(17.5)</td>
+<td>3(1.0)</td>
+<td>31(7.0)</td>
+<td>101(7.0)</td>
+<td>1149.0</td>
+<td>100.1</td>
+<td>11.5</td>
+</tr>
+<tr>
+<th>9</th>
+<td>10(0.5)</td>
+<td>72(4.4)</td>
+<td>0(0)</td>
+<td>42(2.4)</td>
+<td>20(1.5)</td>
+<td>96(11.0)</td>
+<td>10(1.2)</td>
+<td>91(6.4)</td>
+<td>8(1.1)</td>
+<td>0(0)</td>
+<td>74(6.1)</td>
+<td>28(2.5)</td>
+<td>0(0)</td>
+<td>227(26.4)</td>
+<td>0(0)</td>
+<td>3(0.5)</td>
+<td>0(0)</td>
+<td>22(1.5)</td>
+<td>6(0.5)</td>
+<td>39(11.4)</td>
+<td>63(4.2)</td>
+<td>965.0</td>
+<td>98.3</td>
+<td>9.8</td>
+</tr>
+<tr>
+<th>10</th>
+<td>32(3.1)</td>
+<td>14(0.5)</td>
+<td>0(0)</td>
+<td>0(0.1)</td>
+<td>99(8.5)</td>
+<td>24(3.2)</td>
+<td>59(8.1)</td>
+<td>4(0.5)</td>
+<td>121(11.2)</td>
+<td>0(0)</td>
+<td>62(4.0)</td>
+<td>75(6.2)</td>
+<td>0(0)</td>
+<td>25(3.5)</td>
+<td>0(0)</td>
+<td>208(24.5)</td>
+<td>0(0)</td>
+<td>65(4.0)</td>
+<td>41(4.3)</td>
+<td>0(0)</td>
+<td>0(0)</td>
+<td>1088.0</td>
+<td>110.1</td>
+<td>9.9</td>
+</tr>
+<tr>
+<th>Total</th>
+<td>1111</td>
+<td>712</td>
+<td>24</td>
+<td>538</td>
+<td>832</td>
+<td>442</td>
+<td>279</td>
+<td>771</td>
+<td>560</td>
+<td>169</td>
+<td>513</td>
+<td>604</td>
+<td>81</td>
+<td>598</td>
+<td>62</td>
+<td>603</td>
+<td>225</td>
+<td>912</td>
+<td>445</td>
+<td>380</td>
+<td>833</td>
+<td>10694.0</td>
+<td>1094.2</td>
+<td>9.8</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html><img src="srinathbingi_partnership.png" alt="srinathbingi_partnership"><br><br>
+            <div style="text-align:center;">
+                <h1>Fall of Wickets</h1>
+            </div>
+            <table>
+<thead>
+<tr>
+<th>#</th>
+<th>don_1</th>
+<th>nix71289_1</th>
+<th>nix71289_2</th>
+<th>aj_1</th>
+<th>lelouch_1</th>
+<th>revanth_1</th>
+<th>cherry1114604_1</th>
+<th>cherry1114604_2</th>
+<th>vikramobu_1</th>
+<th>vikramobu_2</th>
+<th>aman_1</th>
+<th>siddhu03_1</th>
+<th>siddhu03_2</th>
+<th>hiren_1</th>
+<th>hiren_2</th>
+<th>donzzz_1</th>
+<th>donzzz_2</th>
+<th>karthik_1</th>
+<th>iceman_1</th>
+<th>iceman_2</th>
+<th>aj_2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>1</th>
+<td>38(3.5)</td>
+<td>263(25.2)</td>
+<td>13(1.1)</td>
+<td>65(5.0)</td>
+<td>76(5.4)</td>
+<td>13(2.2)</td>
+<td>31(2.0)</td>
+<td>27(2.1)</td>
+<td>65(5.5)</td>
+<td>83(5.3)</td>
+<td>75(6.0)</td>
+<td>14(1.1)</td>
+<td>18(1.3)</td>
+<td>28(2.0999999046325684)</td>
+<td>10(1.100000023841858)</td>
+<td>123(10.4)</td>
+<td>56(4.0)</td>
+<td>116(9.5)</td>
+<td>78(5.1)</td>
+<td>51(4.0)</td>
+<td>36(4.1)</td>
+</tr>
+<tr>
+<th>2</th>
+<td>312(28.4)</td>
+<td>392(37.0)</td>
+<td>0(0)</td>
+<td>128(9.0)</td>
+<td>336(29.0)</td>
+<td>13(2.3)</td>
+<td>46(4.1)</td>
+<td>33(3.1)</td>
+<td>209(17.1)</td>
+<td>92(6.4)</td>
+<td>85(7.1)</td>
+<td>35(3.4)</td>
+<td>22(2.0)</td>
+<td>46(4.0)</td>
+<td>0(0)</td>
+<td>179(17.0)</td>
+<td>218(14.5)</td>
+<td>207(19.2)</td>
+<td>116(8.4)</td>
+<td>89(8.2)</td>
+<td>173(16.4)</td>
+</tr>
+<tr>
+<th>3</th>
+<td>549(48.3)</td>
+<td>427(39.0)</td>
+<td>0(0)</td>
+<td>183(12.4)</td>
+<td>368(31.4)</td>
+<td>19(3.1)</td>
+<td>56(5.2)</td>
+<td>99(10.3)</td>
+<td>285(22.2)</td>
+<td>0(0)</td>
+<td>86(7.3)</td>
+<td>35(3.5)</td>
+<td>41(4.2)</td>
+<td>152(12.0)</td>
+<td>0(0)</td>
+<td>184(18.0)</td>
+<td>0(0)</td>
+<td>259(24.4)</td>
+<td>234(18.0)</td>
+<td>97(9.0)</td>
+<td>321(30.3)</td>
+</tr>
+<tr>
+<th>4</th>
+<td>788(71.1)</td>
+<td>441(40.3)</td>
+<td>0(0)</td>
+<td>245(17.1)</td>
+<td>454(38.5)</td>
+<td>109(12.2)</td>
+<td>75(7.0)</td>
+<td>99(10.4)</td>
+<td>294(23.0)</td>
+<td>0(0)</td>
+<td>162(13.5)</td>
+<td>251(21.0)</td>
+<td>75(7.3)</td>
+<td>201(17.200000762939453)</td>
+<td>0(0)</td>
+<td>237(23.2)</td>
+<td>0(0)</td>
+<td>372(36.2)</td>
+<td>274(22.1)</td>
+<td>118(11.0)</td>
+<td>406(37.0)</td>
+</tr>
+<tr>
+<th>5</th>
+<td>964(84.1)</td>
+<td>467(44.2)</td>
+<td>0(0)</td>
+<td>247(17.5)</td>
+<td>460(40.1)</td>
+<td>228(22.3)</td>
+<td>126(11.3)</td>
+<td>145(15.3)</td>
+<td>362(27.2)</td>
+<td>0(0)</td>
+<td>193(17.3)</td>
+<td>319(26.2)</td>
+<td>0(0)</td>
+<td>238(21.299999237060547)</td>
+<td>0(0)</td>
+<td>249(24.3)</td>
+<td>0(0)</td>
+<td>429(41.0)</td>
+<td>274(22.2)</td>
+<td>138(13.5)</td>
+<td>497(44.0)</td>
+</tr>
+<tr>
+<th>6</th>
+<td>984(85.3)</td>
+<td>522(48.5)</td>
+<td>0(0)</td>
+<td>331(23.5)</td>
+<td>491(42.2)</td>
+<td>228(22.4)</td>
+<td>152(14.0)</td>
+<td>441(45.1)</td>
+<td>376(28.5)</td>
+<td>0(0)</td>
+<td>305(27.2)</td>
+<td>349(29.1)</td>
+<td>0(0)</td>
+<td>293(26.299999237060547)</td>
+<td>0(0)</td>
+<td>323(29.5)</td>
+<td>0(0)</td>
+<td>575(54.3)</td>
+<td>328(28.3)</td>
+<td>196(20.2)</td>
+<td>518(46.3)</td>
+</tr>
+<tr>
+<th>7</th>
+<td>1032(89.0)</td>
+<td>525(49.2)</td>
+<td>0(0)</td>
+<td>406(29.4)</td>
+<td>560(47.5)</td>
+<td>307(28.3)</td>
+<td>170(15.4)</td>
+<td>606(55.3)</td>
+<td>422(31.4)</td>
+<td>0(0)</td>
+<td>367(35.2)</td>
+<td>454(38.0)</td>
+<td>0(0)</td>
+<td>294(27.0)</td>
+<td>0(0)</td>
+<td>323(30.0)</td>
+<td>0(0)</td>
+<td>612(57.2)</td>
+<td>383(34.5)</td>
+<td>271(34.4)</td>
+<td>632(55.3)</td>
+</tr>
+<tr>
+<th>8</th>
+<td>1059(91.0)</td>
+<td>610(55.1)</td>
+<td>0(0)</td>
+<td>485(35.3)</td>
+<td>703(58.3)</td>
+<td>321(30.2)</td>
+<td>210(19.1)</td>
+<td>652(59.3)</td>
+<td>431(33.1)</td>
+<td>0(0)</td>
+<td>372(35.5)</td>
+<td>485(41.1)</td>
+<td>0(0)</td>
+<td>337(31.0)</td>
+<td>0(0)</td>
+<td>351(32.4)</td>
+<td>0(0)</td>
+<td>825(75.1)</td>
+<td>386(35.5)</td>
+<td>302(41.4)</td>
+<td>733(62.3)</td>
+</tr>
+<tr>
+<th>9</th>
+<td>1069(91.5)</td>
+<td>682(59.5)</td>
+<td>0(0)</td>
+<td>527(38.1)</td>
+<td>723(60.2)</td>
+<td>417(41.2)</td>
+<td>220(20.3)</td>
+<td>743(66.1)</td>
+<td>439(34.2)</td>
+<td>0(0)</td>
+<td>446(42.0)</td>
+<td>513(44.0)</td>
+<td>0(0)</td>
+<td>564(57.400001525878906)</td>
+<td>0(0)</td>
+<td>354(33.3)</td>
+<td>0(0)</td>
+<td>847(77.0)</td>
+<td>392(36.4)</td>
+<td>341(53.2)</td>
+<td>796(66.5)</td>
+</tr>
+<tr>
+<th>10</th>
+<td>1101(95.0)</td>
+<td>696(60.4)</td>
+<td>0(0)</td>
+<td>527(38.2)</td>
+<td>822(69.1)</td>
+<td>441(44.4)</td>
+<td>279(28.4)</td>
+<td>747(67.0)</td>
+<td>560(45.4)</td>
+<td>0(0)</td>
+<td>508(46.0)</td>
+<td>588(50.2)</td>
+<td>0(0)</td>
+<td>589(61.29999923706055)</td>
+<td>0(0)</td>
+<td>562(58.2)</td>
+<td>0(0)</td>
+<td>912(81.0)</td>
+<td>433(41.1)</td>
+<td>0(0)</td>
+<td>0(0)</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
+    
+                
+    </body>
+
+<footer>
+    <p>
+
+        These games are played between a bunch of passionate cricketers on virtual cricket, and these matches are played for pleasure. 
+
+    </p>
+</footer>
+
+    </html>
+        

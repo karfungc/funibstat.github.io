@@ -10,6 +10,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+
         <style>
         .side-by-side-images img {
             display: inline-block;
@@ -54,6 +56,170 @@
         .points-table {
           background-color: #E0FFFF;
         }
+        body {
+          padding: 0;
+          margin: 0;
+          border: 0;
+          font-family: "Museo Sans", sans-serif;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+        ul.accordion-list {
+          position: relative;
+          display: block;
+          width: 100%;
+          height: auto;
+          padding: 20px;
+          margin: 0;
+          list-style: none;
+          background-color: #f9f9fa;
+        }
+        ul.accordion-list li {
+          position: relative;
+          display: block;
+          width: 100%;
+          height: auto;
+          background-color: #fff;
+          padding: 20px;
+          margin: 0 auto 15px auto;
+          border: 1px solid #eee;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+        ul.accordion-list .main-accordion--list.active:after {
+          transform: rotate(180deg);
+        }
+        ul.accordion-list li h2 {
+          font-weight: 600;
+          position: relative;
+          display: block;
+          width: 100%;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0;
+          font-size: 24px;
+          letter-spacing: 0.01em;
+          cursor: pointer;
+          font-family: Arial, sans-serif;
+        }
+        ul.accordion-list .main-accordion--list:after {
+          content: "2fc";
+          font-family: "material-design-iconic-font";
+          position: absolute;
+          right: 20px;
+          top: 20px;
+          color: #000;
+          transition: all 0.3s ease-in-out;
+          font-size: 34px;
+        }
+        ul.accordion-list li div.answer {
+          position: relative;
+          display: block;
+          width: 100%;
+          height: auto;
+          margin: 0;
+          padding: 0;
+          cursor: pointer;
+        }
+        ul.accordion-list li div.answer p {
+          position: relative;
+          display: block;
+          font-weight: 300;
+          padding: 10px 0 0 0;
+          cursor: pointer;
+          line-height: 150%;
+          margin: 0 0 15px 0;
+          font-size: 14px;
+        }
+        .main-header-block h1 {
+          text-align: center;
+        }
+        .accordion-inner-block {
+          margin-top: 20px;
+        }
+        .accortion-list--inner, .accortion-list-odi--inner {
+          display: flex;
+          align-items: center;
+          padding-left: 10px;
+          margin-bottom: 4px;
+          box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        }
+        .accordion-inner-block .accortion-list--inner li,
+        .accordion-inner-odi-block .accortion-list-odi--inner li {
+          border: none;
+          margin-bottom: 0;
+          font-size: 18px;
+        }
+        .accordion-inner-block .accortion-list--inner li strong {
+          font-weight: 600;
+        }
+        .accordion-inner-block .accortion-list--inner li strong svg,
+        .odi-player-status--inner li strong svg {
+          vertical-align: bottom;
+          width: 25px;
+          height: auto;
+          padding-right: 5px;
+        }
+        .accordion-inner-block .accortion-list--inner li:first-child,
+        .accordion-inner-odi-block .accortion-list-odi--inner li:first-child {
+          min-width: 28%;
+          width: auto;
+          padding-left: 0;
+        }
+        .accordion-inner-block .accortion-list--inner li:nth-child(2) span,
+        .accordion-inner-odi-block .accortion-list-odi--inner li:nth-child(2) .green-status {
+          background: #e5f6ee;
+          padding: 8px;
+          border-radius: 6px;
+          color: #05ad61;
+        }
+        .accordion-inner-block .accortion-list--inner li:nth-child(3) span,
+        .odi-player-status--inner li:nth-child(2) span {
+          background: #fff8e5;
+          padding: 8px;
+          border-radius: 6px;
+          color: #fbb000;
+        }
+        .accordion-inner-block .accortion-list--inner li:last-child span,
+        .odi-player-status--inner li:nth-child(3) span {
+          background: #f7f7f7;
+          padding: 8px;
+          border-radius: 6px;
+          color: #999999;
+        }
+        .accordion-inner-block .accortion-list--inner.data-two li:nth-child(2) span,
+        .odi-player-status--inner li:nth-child(4) span,
+        .accortion-list-odi--inner li:nth-child(2) .red-status {
+          background: #fef4f3;
+          padding: 8px;
+          border-radius: 6px;
+          color: #e1453d;
+        }
+        .odi-player-status ul {
+          padding-left: 0;
+        }
+        .odi-player-status ul h4 {
+          margin: 0;
+          padding: 10px 0px;
+          font-size: 20px;
+        }  
+        .odi-player-status ul li {
+          padding: 20px 0px;
+        }
+        .accordion--header {
+          display: flex;
+          align-items: center;
+          padding-right: 40px;
+        }
+        .accordion--header .number-of-record {
+          background: #dbdbff;
+          padding: 6px 12px;
+          color: #0000ee;
+          font-size: 20px;
+          font-weight: 600;
+          border-radius: 4px;
+        }
+
         </style>
     
     
@@ -64,6 +230,7 @@
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GEKHN27QRB"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -71,7 +238,24 @@
     
       gtag('config', 'G-GEKHN27QRB');
     </script>
-    
+    <script>
+      $(document).ready(function(){
+        $('.accordion-list > li > .answer').hide();
+          
+        $('.accordion-list > li').click(function() {
+          if ($(this).hasClass("active")) {
+            $(this).removeClass("active").find(".answer").slideUp();
+          } else {
+            $(".accordion-list > li.active .answer").slideUp();
+            $(".accordion-list > li.active").removeClass("active");
+            $(this).addClass("active").find(".answer").slideDown();
+          }
+          return false;
+        });
+
+      });
+    </script>
+
     <body>
     
 
@@ -146,10 +330,10 @@
 <td>1</td>
 <td>10592</td>
 <td>181</td>
-<td>996.0</td>
+<td>996</td>
 <td class="points-table">58.52</td>
 <td>9252</td>
-<td>1154.0</td>
+<td>1154</td>
 <td>223</td>
 <td>17.03</td>
 <td>10.63</td>
@@ -172,10 +356,10 @@
 <td>1</td>
 <td>7956</td>
 <td>193</td>
-<td>1108.0</td>
+<td>1108</td>
 <td class="points-table">41.22</td>
 <td>8494</td>
-<td>1018.0</td>
+<td>1018</td>
 <td>214</td>
 <td>1.53</td>
 <td>7.18</td>
@@ -198,10 +382,10 @@
 <td>1</td>
 <td>8306</td>
 <td>162</td>
-<td>1151.0</td>
+<td>1151</td>
 <td class="points-table">51.27</td>
 <td>8679</td>
-<td>876.0</td>
+<td>876</td>
 <td>196</td>
 <td>6.99</td>
 <td>7.22</td>
@@ -224,10 +408,10 @@
 <td>1</td>
 <td>8035</td>
 <td>173</td>
-<td>801.0</td>
+<td>801</td>
 <td class="points-table">46.45</td>
 <td>8127</td>
-<td>831.0</td>
+<td>831</td>
 <td>202</td>
 <td>6.21</td>
 <td>10.03</td>
@@ -250,10 +434,10 @@
 <td>2</td>
 <td>9612</td>
 <td>176</td>
-<td>917.0</td>
+<td>917</td>
 <td class="points-table">54.61</td>
 <td>9054</td>
-<td>1185.0</td>
+<td>1185</td>
 <td>231</td>
 <td>15.42</td>
 <td>10.48</td>
@@ -276,10 +460,10 @@
 <td>1</td>
 <td>9428</td>
 <td>206</td>
-<td>1132.0</td>
+<td>1132</td>
 <td class="points-table">45.77</td>
 <td>9543</td>
-<td>950.0</td>
+<td>950</td>
 <td>227</td>
 <td>3.73</td>
 <td>8.33</td>
@@ -302,10 +486,10 @@
 <td>1</td>
 <td>8563</td>
 <td>230</td>
-<td>854.0</td>
+<td>854</td>
 <td class="points-table">37.23</td>
 <td>8934</td>
-<td>1069.0</td>
+<td>1069</td>
 <td>223</td>
 <td>-2.83</td>
 <td>10.03</td>
@@ -328,10 +512,10 @@
 <td>0</td>
 <td>10144</td>
 <td>229</td>
-<td>1286.0</td>
+<td>1286</td>
 <td class="points-table">44.3</td>
 <td>9408</td>
-<td>1036.0</td>
+<td>1036</td>
 <td>208</td>
 <td>-0.93</td>
 <td>7.89</td>
@@ -354,10 +538,10 @@
 <td>0</td>
 <td>8508</td>
 <td>202</td>
-<td>1215.0</td>
+<td>1215</td>
 <td class="points-table">42.12</td>
 <td>8347</td>
-<td>962.0</td>
+<td>962</td>
 <td>198</td>
 <td>-0.04</td>
 <td>7.0</td>
@@ -370,7 +554,7 @@
 </tr>
 <tr class="light-orange">
 <td>10</td>
-<td class="highlight-color"><b><a href = "hirenbhuva.html">hirenbhuva</a><b></td>
+<td class="highlight-color"><b><a href = "hiren.html">hiren</a><b></td>
 <td>12</td>
 <td>24</td>
 <td>4</td>
@@ -380,10 +564,10 @@
 <td>0</td>
 <td>7398</td>
 <td>238</td>
-<td>737.0</td>
+<td>737</td>
 <td class="points-table">31.08</td>
 <td>7648</td>
-<td>821.0</td>
+<td>821</td>
 <td>201</td>
 <td>-6.97</td>
 <td>10.04</td>
@@ -406,10 +590,10 @@
 <td>0</td>
 <td>8188</td>
 <td>229</td>
-<td>837.0</td>
+<td>837</td>
 <td class="points-table">35.76</td>
 <td>8496</td>
-<td>958.0</td>
+<td>958</td>
 <td>222</td>
 <td>-2.51</td>
 <td>9.78</td>
@@ -432,10 +616,10 @@
 <td>0</td>
 <td>7774</td>
 <td>240</td>
-<td>605.0</td>
+<td>605</td>
 <td class="points-table">32.39</td>
 <td>7768</td>
-<td>760.0</td>
+<td>760</td>
 <td>198</td>
 <td>-6.84</td>
 <td>12.85</td>
@@ -458,10 +642,10 @@
 <td>0</td>
 <td>6310</td>
 <td>240</td>
-<td>695.0</td>
+<td>695</td>
 <td class="points-table">26.29</td>
 <td>7064</td>
-<td>714.0</td>
+<td>714</td>
 <td>156</td>
 <td>-18.99</td>
 <td>9.08</td>
@@ -871,7 +1055,7 @@
 <thead>
 <tr>
 <th>Player_Name</th>
-<th>arunpoddar</th>
+<th>Arunpoddar</th>
 <th>Donzzz1717</th>
 <th>Harshil</th>
 <th>Hirenbhuva</th>
@@ -888,7 +1072,7 @@
 </thead>
 <tbody>
 <tr>
-<th>arunpoddar</th>
+<th>Arunpoddar</th>
 <td style="background-color: lightcoral;">Will_Not_Play</td>
 <td class="light-orange">Played</td>
 <td class="light-orange">Played</td>
@@ -2476,5 +2660,14 @@
     
                 
     </body>
+
+<footer>
+    <p>
+
+        These games are played between a bunch of passionate cricketers on virtual cricket, and these matches are played for pleasure. 
+
+    </p>
+</footer>
+
     </html>
         
